@@ -1,0 +1,14 @@
+- name: "Installing Basic Packages"
+  yum: pkg={{ item }} state=installed
+  with_items:
+  - vim
+  - git
+  - java
+  - zip
+  - unzip
+  - mysql
+  -httpd 
+
+
+
+
