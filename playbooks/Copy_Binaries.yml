@@ -2,4 +2,4 @@
 - hosts: all
   become: true
   roles:
-  - Copy_Binaries
+  - Copy_and_Unzip_Binaries
