@@ -1,5 +1,0 @@
----
-- hosts: all
-  become: true
-  roles:
-  - Copy_and_Unzip_Binaries

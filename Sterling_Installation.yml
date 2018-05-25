@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  roles:
+  - Sterling_Installation
+
+- hosts: all
+  roles:
+  - Create_Directories
+

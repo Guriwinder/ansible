@@ -1,0 +1,38 @@
+- name: "Copying Sterling Binaries to remote machine"
+  copy:
+      src: /opt/binaries/STER_9.5_EE_LINUX.zip
+      dest: /tmp
+      owner: omsadm
+      group: omsadm
+
+- name: "Creating Directory to Unzip Files"
+  file:
+       path: /tmp/Sterling9.5
+       state: directory
+       owner: omsadm
+       group: omsadm
+       mode: 0775
+
+
+- name: "Unzipping Binaries on Remote machine"
+  unarchive: 
+           src: /tmp/STER_9.5_EE_LINUX.zip
+           dest: /tmp/Sterling9.5    
+           copy: no
+           owner: omsadm
+           group: omsadm
+           mode: 0775
+
+- name: "Removing zip files"
+  file:
+       path: /tmp/STER_9.5_EE_LINUX.zip
+       state: absent
+
+- name: "Creating Directory for Installatiion Manager"
+  file:
+       path: /opt/IM_OMS/eclipse
+       state: directory
+       owner: omsadm
+       group: omsadm
+       mode: 0775
+       recurse: yes

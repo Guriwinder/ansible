@@ -1,0 +1,25 @@
+- name: "Creating Directory for Installatiion Manager"
+  file:
+       path: /opt/IM_OMS/eclipse
+       state: directory
+       owner: omsadm
+       group: omsadm
+       mode: 0775
+       recurse: yes
+
+- name: "Creating Directory for Sterling"
+  file:
+       path: /opt/IBM/
+       state: directory
+       mode: 0775
+
+- name: "Creating Directory for Sterling"
+  file:
+       path: /opt/IBM/Sterling9.5
+       state: directory
+       owner: omsadm
+       group: omsadm
+       mode: 0775
+
+
+
