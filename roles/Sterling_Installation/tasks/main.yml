@@ -35,4 +35,18 @@
        owner: omsadm
        group: omsadm
        mode: 0775
-       recurse: yes
+      recurse: yes
+
+- name: "Copying Installation Manager scripts to Remote"
+  copy:
+      src: /opt/binaries/Installation_Manager.sh
+      dest: /tmp
+      owner: omsadm
+      group: omsadm
+      mode: 0775
+
+- name: "Installation Maanager Installation for Sterling"
+  shell: /tmp/Installation_Manager.sh >> /tmp/Installation_Manager.txt
+  become_user: omsadm
+
+
