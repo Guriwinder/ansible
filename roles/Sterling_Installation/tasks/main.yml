@@ -49,4 +49,24 @@
   shell: /tmp/Installation_Manager.sh >> /tmp/Installation_Manager.txt
   become_user: omsadm
 
+- name: "Copying Sterling Response File to Remote"
+  copy:
+      src: /opt/binaries/Sterling_Response.xml
+      dest: /tmp
+      owner: omsadm
+      group: omsadm
+      mode: 0775
+
+
+- name: "Copying Sterling Installation scripts to Remote"
+  copy:
+      src: /opt/binaries/Sterling.sh
+      dest: /tmp
+      owner: omsadm
+      group: omsadm
+      mode: 0775
+
+- name: "Starting Sterling Installation"
+  shell: /tmp/Sterling.sh
+  become_user: omsadm
 
